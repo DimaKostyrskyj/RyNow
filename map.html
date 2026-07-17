@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#050505">
+  <title>Карта ВЗП — RYNOW AI</title>
+  <link rel="icon" href="/rynow-favicon.ico">
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css">
+  <link rel="stylesheet" href="/map.css">
+</head>
+<body>
+  <main class="map-app">
+    <header class="map-topbar">
+      <a class="map-brand" href="/">
+        <span>RY</span>NOW <b>MAP</b>
+      </a>
+
+      <div class="map-title">
+        <strong>Карта ВЗП</strong>
+        <span>Интерактивная карта GTA5RP</span>
+      </div>
+
+      <div class="map-actions">
+        <button id="fitMapBtn" type="button">Показать всю карту</button>
+        <a href="/">← На сайт</a>
+      </div>
+    </header>
+
+    <aside class="map-sidebar" id="mapSidebar">
+      <div class="sidebar-section">
+        <label class="control-label" for="serverSelect">Сервер</label>
+        <select id="serverSelect">
+          <option value="murrieta">Murrieta</option>
+        </select>
+        <p class="sidebar-note">Сейчас загружены данные Murrieta. Карта покрывает весь остров GTA V.</p>
+      </div>
+
+      <div class="sidebar-section">
+        <label class="control-label" for="mapSearch">Поиск места</label>
+        <div class="search-wrap">
+          <input id="mapSearch" type="search" placeholder="Название, владелец, ID...">
+          <button id="clearSearchBtn" type="button">×</button>
+        </div>
+        <div class="search-results" id="searchResults"></div>
+      </div>
+
+      <div class="sidebar-section categories-section">
+        <div class="sidebar-head">
+          <span>Слои карты</span>
+          <button id="toggleAllBtn" type="button">Скрыть всё</button>
+        </div>
+        <div id="categoryList" class="category-list"></div>
+      </div>
+
+      <footer class="map-sidebar-footer">
+        <span id="visibleCount">0 меток</span>
+        <small>RYNOW Intelligence Map</small>
+      </footer>
+    </aside>
+
+    <button class="sidebar-toggle" id="sidebarToggle" type="button" aria-label="Открыть фильтры">☰</button>
+
+    <section class="map-stage">
+      <div id="gtaMap"></div>
+      <div class="map-coordinates" id="mapCoordinates">X: 0 · Y: 0</div>
+      <div class="map-legend">
+        <span><i></i> Метка</span>
+        <span><i class="cluster-dot"></i> Группа меток</span>
+      </div>
+    </section>
+
+    <div class="map-loading" id="mapLoading">
+      <div class="loading-reticle"><i></i><b></b></div>
+      <strong>RYNOW MAP</strong>
+      <span>Загрузка карты и данных</span>
+    </div>
+  </main>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+  <script src="/map.js"></script>
+</body>
+</html>
