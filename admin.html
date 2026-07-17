@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title>RYNOW Admin</title>
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/admin.css">
+</head>
+<body class="admin-body">
+<header class="admin-topbar">
+  <a class="brand" href="/">
+    <span class="brand-mark">R<span>Y</span></span>
+    <span class="brand-word">NOW</span>
+    <span class="brand-ai">ADMIN</span>
+  </a>
+  <a class="ghost-btn" href="/">← На сайт</a>
+</header>
+
+<main class="admin-shell">
+  <p class="eyebrow">FOUNDER CONTROL PANEL</p>
+  <h1>Админ-панель</h1>
+  <p id="adminWelcome">Проверка доступа...</p>
+
+  <section id="adminDenied" hidden class="glass-card admin-state">
+    <h2>Ошибка</h2>
+    <p id="adminDeniedText"></p>
+  </section>
+
+  <section id="adminContent" hidden>
+    <div class="admin-grid">
+      <article class="admin-card glass-card"><span>ПОЛЬЗОВАТЕЛИ</span><strong id="countUsers">0</strong></article>
+      <article class="admin-card glass-card"><span>НОВОСТИ</span><strong id="countNews">0</strong></article>
+      <article class="admin-card glass-card"><span>ПРАВИЛА</span><strong id="countRules">0</strong></article>
+      <article class="admin-card glass-card"><span>БАЗА ЗНАНИЙ</span><strong id="countKnowledge">0</strong></article>
+    </div>
+
+    <div class="admin-tabs">
+      <button type="button" class="active" data-tab="users">Пользователи</button>
+      <button type="button" data-tab="news">Новости</button>
+      <button type="button" data-tab="rules">Правила</button>
+      <button type="button" data-tab="knowledge">База знаний</button>
+    </div>
+
+    <section class="admin-section glass-card">
+      <div class="admin-section-head">
+        <div>
+          <h2 id="resourceTitle">Пользователи</h2>
+          <p id="resourceDescription">Загрузка данных...</p>
+        </div>
+        <button type="button" class="primary-btn" id="createBtn" hidden>Добавить</button>
+      </div>
+
+      <div id="adminLoading" class="admin-loading" hidden>Загрузка...</div>
+
+      <div class="admin-table-wrap">
+        <table class="admin-table">
+          <thead id="thead"></thead>
+          <tbody id="tbody"></tbody>
+        </table>
+      </div>
+    </section>
+  </section>
+</main>
+
+<div class="modal" id="editModal" aria-hidden="true">
+  <div class="modal-backdrop" data-close></div>
+  <div class="modal-card glass-card admin-editor">
+    <button type="button" class="modal-close" data-close>×</button>
+    <p class="eyebrow">CONTENT EDITOR</p>
+    <h2 id="editorHeading">Редактор</h2>
+
+    <form id="editForm">
+      <input type="hidden" id="editId">
+
+      <label>
+        Заголовок
+        <input id="editTitle" required maxlength="180">
+      </label>
+
+      <label id="catField">
+        Категория
+        <input id="editCategory" value="Общие правила">
+      </label>
+
+      <label>
+        Текст
+        <textarea id="editContent" rows="10" required></textarea>
+      </label>
+
+      <label id="tagsField">
+        Теги через запятую
+        <input id="editTags">
+      </label>
+
+      <label class="admin-checkbox">
+        <input type="checkbox" id="editPublished" checked>
+        Опубликовано
+      </label>
+
+      <button class="primary-btn full" id="saveContentBtn" type="submit">Сохранить</button>
+    </form>
+  </div>
+</div>
+
+<div class="toast" id="adminToast"></div>
+<script src="/admin.js"></script>
+</body>
+</html>

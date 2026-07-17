@@ -1,0 +1,44 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/auth/discord",
+      "destination": "/api/auth"
+    },
+    {
+      "source": "/api/auth/discord/callback",
+      "destination": "/api/auth"
+    },
+    {
+      "source": "/api/auth/me",
+      "destination": "/api/auth"
+    },
+    {
+      "source": "/api/auth/logout",
+      "destination": "/api/auth"
+    },
+    {
+      "source": "/api/profile/overview",
+      "destination": "/api/profile"
+    },
+    {
+      "source": "/api/profile/history",
+      "destination": "/api/profile"
+    },
+    {
+      "source": "/api/profile/favorites",
+      "destination": "/api/profile"
+    },
+    {
+      "source": "/api/profile/settings",
+      "destination": "/api/profile"
+    },
+    {
+      "source": "/api/admin",
+      "destination": "/api/admin"
+    },
+    {
+      "source": "/api/content",
+      "destination": "/api/content"
+    }
+  ]
+}

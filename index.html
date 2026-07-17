@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#060606" />
+  <title>RYNOW AI — Правила GTA 5 RP</title>
+  <meta name="description" content="AI-помощник по правилам GTA 5 RP: быстрый поиск, объяснения, примеры и личный профиль с Discord." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="cursor-glow" id="cursorGlow"></div>
+
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="RYNOW AI">
+      <span class="brand-mark">R<span>Y</span></span>
+      <span class="brand-word">NOW</span>
+      <span class="brand-ai">AI</span>
+    </a>
+
+    <nav class="nav" id="nav" aria-label="Основное меню">
+      <a href="#home" class="nav-link active">Главная</a>
+
+      <div class="nav-dropdown" data-dropdown>
+        <button
+          class="nav-dropdown-trigger"
+          type="button"
+          aria-expanded="false"
+          aria-controls="aiDropdown"
+        >
+          AI-помощники
+          <span class="nav-chevron">⌄</span>
+        </button>
+
+        <div class="mega-menu ai-mega-menu" id="aiDropdown">
+          <div class="mega-menu-grid">
+            <a class="mega-card featured" href="#assistant">
+              <span class="mega-card-icon">AI</span>
+              <span class="mega-card-copy">
+                <strong>AI-чат</strong>
+                <small>Ответы по базе правил выбранного сервера</small>
+              </span>
+              <b>→</b>
+            </a>
+
+            <button class="mega-card coming-soon-menu" type="button" data-soon="Анализ отката">
+              <span class="mega-card-icon">↺</span>
+              <span class="mega-card-copy">
+                <strong>Анализ отката</strong>
+                <small>Разбор видео и проверка игровой ситуации</small>
+              </span>
+              <em>СКОРО</em>
+            </button>
+
+            <button class="mega-card coming-soon-menu" type="button" data-soon="Карта ВЗП">
+              <span class="mega-card-icon">⌖</span>
+              <span class="mega-card-copy">
+                <strong>Карта ВЗП</strong>
+                <small>Интерактивная карта важных зон проекта</small>
+              </span>
+              <em>СКОРО</em>
+            </button>
+          </div>
+
+          <div class="mega-menu-footer">
+            <span>RYNOW INTELLIGENCE</span>
+            <small>Инструменты для игроков и администрации</small>
+          </div>
+        </div>
+      </div>
+
+      <a href="#news" class="nav-link">Новости</a>
+
+      <div class="nav-dropdown" data-dropdown>
+        <button
+          class="nav-dropdown-trigger"
+          type="button"
+          aria-expanded="false"
+          aria-controls="moreDropdown"
+        >
+          Прочее
+          <span class="nav-chevron">⌄</span>
+        </button>
+
+        <div class="mega-menu more-mega-menu" id="moreDropdown">
+          <div class="mega-menu-grid">
+            <a class="mega-card" href="#rules">
+              <span class="mega-card-icon">§</span>
+              <span class="mega-card-copy">
+                <strong>Правила</strong>
+                <small>Разделы, кодексы и нормативные документы</small>
+              </span>
+              <b>→</b>
+            </a>
+
+            <a class="mega-card" href="#socials">
+              <span class="mega-card-icon">◎</span>
+              <span class="mega-card-copy">
+                <strong>Социальные сети</strong>
+                <small>Discord проекта и будущие площадки</small>
+              </span>
+              <b>→</b>
+            </a>
+
+            <a class="mega-card" href="#features">
+              <span class="mega-card-icon">✦</span>
+              <span class="mega-card-copy">
+                <strong>Возможности</strong>
+                <small>Профиль, история, избранное и персонализация</small>
+              </span>
+              <b>→</b>
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="header-actions">
+      <button class="ghost-btn" id="profileBtn">
+        <span class="status-dot"></span>
+        Профиль
+      </button>
+      <button class="primary-btn small" id="loginBtn">
+        Войти
+        <span>→</span>
+      </button>
+      <button class="menu-btn" id="menuBtn" aria-label="Открыть меню">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero section" id="home">
+      <div class="hero-bg">
+        <div class="red-ring ring-one"></div>
+        <div class="red-ring ring-two"></div>
+        <div class="beam beam-one"></div>
+        <div class="beam beam-two"></div>
+        <div class="grid-floor"></div>
+      </div>
+
+      <div class="hero-copy reveal">
+        <p class="eyebrow">WELCOME TO THE NEW STANDARD</p>
+        <h1>
+          <span class="red">RYN</span><span class="silver">OW</span>
+          <small>INTELLIGENT RULES SYSTEM</small>
+        </h1>
+        <p class="lead">
+          Умный помощник по правилам GTA 5 RP. Находит нужный пункт,
+          объясняет простыми словами и показывает пример ситуации.
+        </p>
+        <div class="hero-buttons">
+          <a class="primary-btn" href="#assistant">Начать диалог <span>→</span></a>
+          <a class="ghost-btn" href="#rules">Открыть правила</a>
+        </div>
+
+        <div class="stats">
+          <div class="stat">
+            <span class="stat-icon">⌁</span>
+            <strong data-counter="850">0</strong><em>+</em>
+            <small>ПУНКТОВ ПРАВИЛ</small>
+          </div>
+          <div class="stat">
+            <span class="stat-icon">▣</span>
+            <strong data-counter="12">0</strong><em>+</em>
+            <small>РАЗДЕЛОВ</small>
+          </div>
+          <div class="stat">
+            <span class="stat-icon">∞</span>
+            <strong>24/7</strong>
+            <small>AI ДОСТУПЕН</small>
+          </div>
+          <div class="stat">
+            <span class="stat-icon">◉</span>
+            <strong>Discord</strong>
+            <small>АВТОРИЗАЦИЯ</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal delay-1">
+        <div class="halo"></div>
+
+        <img
+          src="monument2.png"
+          alt="RYNOW Monument"
+          class="ai-monument"
+        />
+
+        <div class="mission-card glass-card">
+          <span>НАША МИССИЯ</span>
+          <p>Сделать правила понятными, быстрыми и одинаково доступными для каждого игрока.</p>
+          <i></i>
+        </div>
+      </div>
+
+      <div class="scroll-line">
+        <span>SCROLL TO EXPLORE</span>
+        <i></i>
+      </div>
+    </section>
+
+    <section class="trust-strip" id="community" aria-label="Поддерживаемые RP-проекты">
+      <div class="projects-minimal-grid">
+        <div class="project-minimal-cell">
+          <img src="assets/projects/project-1.png" alt="GTA5RP">
+        </div>
+        <div class="project-minimal-cell">
+          <img src="assets/projects/project-1.png" alt="GTA5RP">
+        </div>
+        <div class="project-minimal-cell">
+          <img src="assets/projects/project-1.png" alt="GTA5RP">
+        </div>
+        <div class="project-minimal-cell">
+          <img src="assets/projects/project-1.png" alt="GTA5RP">
+        </div>
+        <div class="project-minimal-cell">
+          <img src="assets/projects/project-1.png" alt="GTA5RP">
+        </div>
+
+        <div class="project-minimal-cell">
+          <img src="assets/projects/project-2.png" alt="Majestic RP">
+        </div>
+        <div class="project-minimal-cell">
+          <img src="assets/projects/project-2.png" alt="Majestic RP">
+        </div>
+        <div class="project-minimal-cell">
+          <img src="assets/projects/project-2.png" alt="Majestic RP">
+        </div>
+        <div class="project-minimal-cell">
+          <img src="assets/projects/project-2.png" alt="Majestic RP">
+        </div>
+        <div class="project-minimal-cell">
+          <img src="assets/projects/project-2.png" alt="Majestic RP">
+        </div>
+      </div>
+    </section>
+
+    <section class="assistant-section section" id="assistant">
+      <div class="section-heading reveal">
+        <p class="eyebrow">AI RULES ASSISTANT</p>
+        <h2>Задай вопрос — получи точный ответ</h2>
+        <p>Помощник анализирует базу правил и отвечает со ссылкой на пункт, кратким объяснением и примером.</p>
+      </div>
+
+      <div class="assistant-layout">
+        <aside class="chat-sidebar glass-card reveal">
+          <div class="sidebar-head">
+            <div>
+              <strong>История</strong>
+              <span>Ваши диалоги</span>
+            </div>
+            <button id="newChatBtn">＋</button>
+          </div>
+          <div class="chat-list" id="chatList">
+            <button class="chat-item active">
+              <span>Что считается PG?</span>
+              <small>Сегодня, 18:42</small>
+            </button>
+            <button class="chat-item">
+              <span>Когда разрешён DM?</span>
+              <small>Сегодня, 17:10</small>
+            </button>
+            <button class="chat-item">
+              <span>Правило про Green Zone</span>
+              <small>Вчера</small>
+            </button>
+          </div>
+          <button class="discord-connect" id="discordBtn">
+            <img class="discord-logo" src="assets/discord-logo.png" alt="Discord">
+            <span>
+              <b>Подключить Discord</b>
+              <small>Синхронизация профиля</small>
+            </span>
+          </button>
+        </aside>
+
+        <div class="chat-window glass-card reveal delay-1">
+          <div class="chat-top">
+<div class="server-selector-wrap">
+              <label for="serverSelect">СЕРВЕР</label>
+              <select id="serverSelect">
+                <option value="downtown">№1 Downtown</option>
+              </select>
+              <a
+                id="selectedServerForum"
+                href="https://forum.gta5rp.com/forums/server-no1-downtown.14/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >Открыть форум ↗</a>
+            </div>
+            <div class="ai-avatar">AI</div>
+            <div>
+              <strong>RYNOW Assistant</strong>
+              <span><i></i> Онлайн · база обновлена</span>
+            </div>
+            <button class="icon-btn" title="Очистить чат" id="clearChatBtn">⌫</button>
+          </div>
+
+          <div class="messages" id="messages">
+            <div class="message ai-message">
+              <div class="message-avatar">AI</div>
+              <div class="bubble">
+                <p>Привет. Я отвечаю с помощью Grok, но использую только подключённую базу правил.</p>
+                <p>Выберите сервер и задайте любой вопрос по загруженным документам.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="suggestions">
+            <button data-question="Что такое Power Gaming?">Что такое PG?</button>
+            <button data-question="Объясни правило Death Match">Что такое DM?</button>
+            <button data-question="Можно ли уходить от RP-ситуации?">Уход от RP</button>
+          </div>
+
+          <form class="chat-input-wrap" id="chatForm">
+            <textarea id="chatInput" rows="1" placeholder="Напишите вопрос по правилам..." aria-label="Вопрос помощнику"></textarea>
+            <button type="submit" class="send-btn">➤</button>
+          </form>
+          <p class="chat-note">AI может ошибаться. Проверяйте финальное решение по официальному форуму проекта.</p>
+        </div>
+
+        <aside class="answer-panel glass-card reveal delay-2">
+          <div class="panel-label">НАЙДЕННЫЙ РАЗДЕЛ</div>
+          <h3>Общие правила сервера</h3>
+          <div class="rule-card" id="featuredRuleCard">
+            <button class="favorite-rule-btn" id="favoriteRuleBtn" title="Добавить в избранное">☆</button>
+            <span>ПУНКТ 2.4</span>
+            <p>Запрещено совершать действия, невозможные для персонажа в реальной ситуации, ради получения преимущества.</p>
+          </div>
+          <div class="confidence">
+            <span>Точность совпадения</span>
+            <strong>96%</strong>
+            <div><i style="width: 96%"></i></div>
+          </div>
+          <div class="ai-source-list" id="aiSourceList">
+            <span>ИСТОЧНИКИ ПОЯВЯТСЯ ПОСЛЕ ОТВЕТА</span>
+          </div>
+          <a id="answerSourceLink" href="#rules">Открыть источник <span>↗</span></a>
+        </aside>
+      </div>
+    </section>
+
+    <section class="rules-section section" id="rules">
+      <div class="section-heading left reveal">
+        <p class="eyebrow">KNOWLEDGE BASE</p>
+        <h2>Все правила в одном месте</h2>
+        <p>Быстрый поиск, понятная структура и сохранение важных пунктов в профиле.</p>
+      </div>
+
+      <div class="rules-grid">
+        <article class="rule-category reveal">
+          <span class="category-number">01</span>
+          <div class="category-icon">◇</div>
+          <h3>Общие правила</h3>
+          <p>Базовые нормы поведения, терминология и основные ограничения.</p>
+          <a href="#">Открыть раздел →</a>
+        </article>
+        <article class="rule-category reveal delay-1">
+          <span class="category-number">02</span>
+          <div class="category-icon">⌘</div>
+          <h3>Игровой процесс</h3>
+          <p>RP-ситуации, взаимодействия игроков, криминальные действия.</p>
+          <a href="#">Открыть раздел →</a>
+        </article>
+        <article class="rule-category reveal delay-2">
+          <span class="category-number">03</span>
+          <div class="category-icon">⬡</div>
+          <h3>Организации</h3>
+          <p>Государственные и криминальные структуры, права и обязанности.</p>
+          <a href="#">Открыть раздел →</a>
+        </article>
+        <article class="rule-category reveal">
+          <span class="category-number">04</span>
+          <div class="category-icon">⌁</div>
+          <h3>Территории</h3>
+          <p>Green Zone, мероприятия, захваты и специальные игровые зоны.</p>
+          <a href="#">Открыть раздел →</a>
+        </article>
+      </div>
+    </section>
+
+
+    <section class="news-section section" id="news">
+      <div class="section-heading left reveal">
+        <p class="eyebrow">PROJECT UPDATES</p>
+        <h2>Новости проекта</h2>
+        <p>Здесь автоматически появляются опубликованные новости, созданные через админ-панель.</p>
+      </div>
+
+      <div class="news-grid" id="newsGrid">
+        <article class="news-card news-loading glass-card">
+          <span>ЗАГРУЗКА</span>
+          <h3>Получаем последние новости...</h3>
+          <p>Подождите несколько секунд.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="socials-section section" id="socials">
+      <div class="section-heading reveal">
+        <p class="eyebrow">STAY CONNECTED</p>
+        <h2>Социальные сети</h2>
+        <p>Официальные площадки проекта и будущие каналы связи.</p>
+      </div>
+
+      <div class="socials-grid">
+        <a
+          class="social-card discord-social glass-card reveal"
+          href="https://discord.gg/sNT8MvnJMb"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div class="social-icon">
+            <img src="assets/discord-logo.png" alt="Discord">
+          </div>
+          <div class="social-copy">
+            <span>ОФИЦИАЛЬНЫЙ DISCORD</span>
+            <h3>RYNOW Community</h3>
+            <p>Общение, новости, поддержка и обсуждение проекта.</p>
+          </div>
+          <div class="social-action">Присоединиться <b>↗</b></div>
+        </a>
+
+        <article class="social-card coming-soon glass-card reveal delay-1">
+          <div class="social-placeholder">TG</div>
+          <div class="social-copy">
+            <span>TELEGRAM</span>
+            <h3>Скоро</h3>
+            <p>Новости и важные уведомления проекта.</p>
+          </div>
+          <div class="social-action disabled">В разработке</div>
+        </article>
+
+        <article class="social-card coming-soon glass-card reveal delay-2">
+          <div class="social-placeholder">YT</div>
+          <div class="social-copy">
+            <span>YOUTUBE</span>
+            <h3>Скоро</h3>
+            <p>Обновления, демонстрации и полезные материалы.</p>
+          </div>
+          <div class="social-action disabled">В разработке</div>
+        </article>
+      </div>
+    </section>
+
+    <section class="features-section section" id="features">
+      <div class="feature-big glass-card reveal">
+        <div>
+          <p class="eyebrow">PERSONAL SPACE</p>
+          <h2>Профиль, который работает вместе с вами</h2>
+          <p>Сохраняйте вопросы, добавляйте правила в избранное, отслеживайте историю и подключайте Discord.</p>
+          <button class="primary-btn" id="openProfileDemo">Открыть профиль <span>→</span></button>
+        </div>
+        <div class="profile-preview" id="profilePreview">
+          <div class="profile-cover" id="previewCover"></div>
+          <div class="profile-avatar" id="previewAvatar">RY</div>
+          <h3 id="previewName">RYNOW_User</h3>
+          <span class="rank" id="previewRank">MEMBER · LEVEL 01</span>
+          <div class="profile-stats">
+            <div><strong id="previewQuestions">0</strong><small>ВОПРОСОВ</small></div>
+            <div><strong id="previewFavorites">0</strong><small>ИЗБРАННОЕ</small></div>
+            <div><strong id="previewLevel">1</strong><small>УРОВЕНЬ</small></div>
+          </div>
+          <div class="discord-row" id="previewDiscordRow">
+            <img class="discord-logo" src="assets/discord-logo.png" alt="Discord">
+            <div>
+              <b id="previewDiscordTitle">Discord не подключён</b>
+              <small id="previewDiscordName">Войдите в аккаунт</small>
+            </div>
+            <i id="previewDiscordStatus">—</i>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section section">
+      <div class="cta-orb"></div>
+      <div class="cta-content reveal">
+        <p class="eyebrow">READY TO START</p>
+        <h2>Правила больше не нужно искать вручную</h2>
+        <p>Создайте профиль, подключите Discord и получите доступ к персональному AI-помощнику.</p>
+        <button class="primary-btn" id="ctaRegister">Создать аккаунт <span>→</span></button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <a class="brand" href="#home">
+      <span class="brand-mark">R<span>Y</span></span>
+      <span class="brand-word">NOW</span>
+      <span class="brand-ai">AI</span>
+    </a>
+    <p>© 2026 RYNOW AI. Не является официальным сервисом GTA 5 RP.</p>
+    <div>
+      <a href="#">Политика</a>
+      <a href="#">Условия</a>
+      <a href="#news">Новости</a>
+      <a href="https://discord.gg/sNT8MvnJMb" target="_blank" rel="noopener noreferrer">Discord</a>
+    </div>
+  </footer>
+
+  <div class="modal" id="authModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-card glass-card">
+      <button class="modal-close" data-close-modal>×</button>
+      <p class="eyebrow">ACCOUNT ACCESS</p>
+      <h2>Вход в RYNOW</h2>
+      <p class="modal-subtitle">
+        Отдельная регистрация не нужна. При первом входе профиль создастся автоматически.
+      </p>
+
+      <a class="discord-login discord-login-link" href="/api/auth/discord">
+        <img class="discord-logo" src="assets/discord-logo.png" alt="Discord">
+        Войти через Discord
+      </a>
+
+      <p class="simple-auth-note">
+        Сайт получает только Discord ID, имя, аватар и электронную почту.
+      </p>
+    </div>
+  </div>
+
+  <div class="modal" id="profileModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-profile></div>
+    <div class="modal-card profile-modal-card glass-card">
+      <button class="modal-close" data-close-profile>×</button>
+
+      <div class="profile-header-card">
+        <div class="profile-banner"></div>
+        <div class="profile-main-row">
+          <div class="profile-avatar large" id="profileAvatar">RY</div>
+          <div class="profile-identity">
+            <p class="eyebrow">DISCORD PROFILE</p>
+            <h2 id="profileName">Пользователь</h2>
+            <span id="profileDiscordId">Discord ID: —</span>
+            <div class="profile-badges"><span class="profile-badge discord-badge"><img src="assets/discord-logo.png" alt=""> DISCORD</span><span class="profile-badge founder-profile-badge" id="founderBadge" hidden>◆ ОСНОВАТЕЛЬ</span></div>
+          </div>
+          <a class="admin-panel-link" id="adminPanelLink" href="/admin.html" hidden>Админ-панель</a>
+        </div>
+      </div>
+
+      <div class="profile-level-card">
+        <div>
+          <span>УРОВЕНЬ</span>
+          <strong id="profileLevel">1</strong>
+        </div>
+        <div class="level-progress-wrap">
+          <div class="level-progress-text">
+            <span id="profileXpText">0 / 100 XP</span>
+            <small>Активность повышает уровень</small>
+          </div>
+          <div class="level-progress"><i id="profileXpBar"></i></div><div class="level-reward" id="levelReward">Следующая награда: бейдж «Новичок»</div>
+        </div>
+      </div><div class="ai-stats-grid"><div class="ai-stat-card"><span>ВОПРОСОВ</span><strong id="aiStatQuestions">0</strong></div><div class="ai-stat-card"><span>AI TOKENS</span><strong id="aiStatTokens">0</strong></div><div class="ai-stat-card"><span>ПОЛЕЗНЫХ ОТВЕТОВ</span><strong id="aiStatHelpful">0</strong></div><div class="ai-stat-card"><span>СОХРАНЕНО</span><strong id="aiStatFavorites">0</strong></div></div><div class="profile-menu" id="profileTabs">
+        <button class="active" data-profile-tab="overview">Обзор</button>
+        <button data-profile-tab="history">История <span id="historyCountBadge">0</span></button>
+        <button data-profile-tab="favorites">Избранное <span id="favoritesCountBadge">0</span></button>
+        <button data-profile-tab="settings">Настройки</button>
+      </div>
+
+      <div class="profile-tab-panel active" data-profile-panel="overview">
+        <div class="profile-content">
+          <div class="profile-data">
+            <span>Discord</span>
+            <strong id="profileDiscordStatus">Подключён</strong>
+          </div>
+          <div class="profile-data">
+            <span>Роль</span>
+            <strong id="profileRole">Пользователь</strong>
+          </div>
+          <div class="profile-data">
+            <span>Вопросов задано</span>
+            <strong id="profileQuestions">0</strong>
+          </div>
+          <div class="profile-data">
+            <span>В избранном</span>
+            <strong id="profileFavorites">0</strong>
+          </div>
+          <div class="profile-data">
+            <span>Последняя активность</span>
+            <strong id="profileLastActivity">—</strong>
+          </div>
+          <div class="profile-data">
+            <span>Аккаунт</span>
+            <strong id="profileEmail">Discord</strong>
+            <button id="logoutBtn">Выйти</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="profile-tab-panel" data-profile-panel="history">
+        <div class="profile-list-head">
+          <div>
+            <h3>История запросов</h3>
+            <p>Последние вопросы, которые вы задавали помощнику.</p>
+          </div>
+          <button class="danger-text-btn" id="clearHistoryBtn">Очистить</button>
+        </div>
+        <div class="profile-list" id="profileHistoryList"></div>
+      </div>
+
+      <div class="profile-tab-panel" data-profile-panel="favorites">
+        <div class="profile-list-head">
+          <div>
+            <h3>Избранные ответы</h3>
+            <p>Сохранённые объяснения и правила.</p>
+          </div>
+        </div>
+        <div class="profile-list" id="profileFavoritesList"></div>
+      </div>
+
+      <div class="profile-tab-panel" data-profile-panel="settings">
+        <div class="settings-hero">
+          <div>
+            <p class="eyebrow">PERSONALIZATION</p>
+            <h3>Настройте RYNOW под себя</h3>
+            <p>Меняйте основной цвет сайта, силу свечения, анимации и формат ответов AI.</p>
+          </div>
+          <button class="settings-reset-btn" id="resetThemeBtn" type="button">Сбросить стиль</button>
+        </div>
+
+        <div class="settings-grid">
+          <section class="settings-card">
+            <div class="settings-card-head">
+              <div>
+                <span>ЦВЕТ САЙТА</span>
+                <h4>Главный акцент</h4>
+              </div>
+              <div class="settings-color-preview" id="settingsColorPreview"></div>
+            </div>
+
+            <div class="color-control-row">
+              <input type="color" id="settingAccentColor" value="#ef2917">
+              <div>
+                <strong id="settingAccentHex">#EF2917</strong>
+                <span>Можно выбрать любой цвет</span>
+              </div>
+            </div>
+
+            <div class="preset-colors">
+              <button type="button" data-color="#ef2917" style="--preset:#ef2917" title="Красный"></button>
+              <button type="button" data-color="#7c5cff" style="--preset:#7c5cff" title="Фиолетовый"></button>
+              <button type="button" data-color="#00b8ff" style="--preset:#00b8ff" title="Голубой"></button>
+              <button type="button" data-color="#00d084" style="--preset:#00d084" title="Зелёный"></button>
+              <button type="button" data-color="#ff9f1c" style="--preset:#ff9f1c" title="Оранжевый"></button>
+              <button type="button" data-color="#ff4fa3" style="--preset:#ff4fa3" title="Розовый"></button>
+            </div>
+          </section>
+
+          <section class="settings-card">
+            <div class="settings-card-head">
+              <div>
+                <span>СВЕЧЕНИЕ</span>
+                <h4>Интенсивность света</h4>
+              </div>
+              <strong id="settingGlowValue">70%</strong>
+            </div>
+
+            <input class="settings-range" type="range" id="settingGlow" min="0" max="100" value="70">
+            <div class="range-labels">
+              <span>Без свечения</span>
+              <span>Максимум</span>
+            </div>
+          </section>
+
+          <section class="settings-card settings-card-wide">
+            <div class="settings-toggle-list">
+              <label class="setting-row">
+                <div>
+                  <strong>Анимации интерфейса</strong>
+                  <span>Плавные появления и движение элементов.</span>
+                </div>
+                <input type="checkbox" id="settingAnimations" checked>
+                <i></i>
+              </label>
+
+              <label class="setting-row">
+                <div>
+                  <strong>Компактные ответы</strong>
+                  <span>AI отвечает короче и без лишних деталей.</span>
+                </div>
+                <input type="checkbox" id="settingCompact">
+                <i></i>
+              </label>
+
+              <label class="setting-row">
+                <div>
+                  <strong>Подтверждение очистки</strong>
+                  <span>Спрашивать перед удалением истории.</span>
+                </div>
+                <input type="checkbox" id="settingConfirmClear" checked>
+                <i></i>
+              </label>
+            </div>
+          </section>
+        </div>
+
+        <div class="settings-actions">
+          <span>Изменения цвета видны сразу</span>
+          <button class="primary-btn settings-save" id="saveSettingsBtn">Сохранить настройки <span>→</span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="/rynow-grok-rag-20260716.js"></script>
+</body>
+</html>
